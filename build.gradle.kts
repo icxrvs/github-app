@@ -6,3 +6,4 @@ plugins {
     id("org.jetbrains.kotlin.kapt") version "1.9.10"
     id("org.jetbrains.kotlin.jvm") version "1.9.10" apply false
 }
+

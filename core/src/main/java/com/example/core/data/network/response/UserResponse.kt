@@ -2,7 +2,6 @@ package com.example.core.data.network.response
 
 import com.google.gson.annotations.SerializedName
 
-
 data class UserResponse(
     @SerializedName("login") var login: String? = null,
     @SerializedName("id") var id: Int? = null,

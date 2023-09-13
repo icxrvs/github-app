@@ -1,5 +1,4 @@
 package com.example.core.domain
-
 data class User (
     var login: String?,
     var id: Int?,
@@ -12,11 +11,11 @@ data class User (
     var followingUrl: String?,
     var gistsUrl: String?,
     var starredUrl: String?,
-    var subscriptionsUrl: String,
-    var organizationsUrl: String,
-    var reposUrl: String,
-    var eventsUrl: String,
-    var receivedEventsUrl: String,
-    var type: String,
+    var subscriptionsUrl: String?,
+    var organizationsUrl: String?,
+    var reposUrl: String?,
+    var eventsUrl: String?,
+    var receivedEventsUrl: String?,
+    var type: String?,
     var siteAdmin: Boolean?
 )

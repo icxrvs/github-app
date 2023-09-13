@@ -4,8 +4,8 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_18
+    targetCompatibility = JavaVersion.VERSION_18
 }
 
 dependencies{
@@ -23,15 +23,12 @@ dependencies{
     api("com.google.code.gson:gson:2.10.1")
 
     //Paging
-    implementation("androidx.paging:paging-runtime:3.2.1")
-    implementation("androidx.paging:paging-common-ktx:3.2.1")
+    api("androidx.paging:paging-common-ktx:3.2.1")
 
     //Javax Inject
     implementation("javax.inject:javax.inject:1")
 
     //Coroutines core
     api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
-
-
 
 }

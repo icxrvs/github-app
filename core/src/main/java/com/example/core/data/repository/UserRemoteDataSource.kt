@@ -1,5 +1,5 @@
 package com.example.core.data.repository
 
-interface UsersRemoteDataSource<T> {
+interface UserRemoteDataSource<T> {
     suspend fun getUsers(query: String): T
 }

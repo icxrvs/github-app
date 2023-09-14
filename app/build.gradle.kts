@@ -1,3 +1,6 @@
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -6,7 +9,11 @@ plugins {
     kotlin("kapt")
 }
 
-
+val secretsProperties = Properties()
+val secretsPropertiesFile = rootProject.file("local.properties")
+if (secretsPropertiesFile.exists()) {
+    secretsProperties.load(FileInputStream(secretsPropertiesFile))
+}
 
 android {
     namespace = "com.example.githubapp"
@@ -33,6 +40,7 @@ android {
 
         getByName("debug") {
             buildConfigField("String", "API_URL", "\"https://api.github.com/\"")
+            buildConfigField ("String", "BEARER_TOKEN", "\"${secretsProperties["BEARER_TOKEN"]}\"")
         }
     }
     compileOptions {

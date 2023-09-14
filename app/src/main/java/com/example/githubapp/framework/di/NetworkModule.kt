@@ -18,9 +18,11 @@ import java.util.concurrent.TimeUnit
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
+    private const val token = BuildConfig.BEARER_TOKEN
+
     private val interceptor = Interceptor { chain ->
         val newRequest = chain.request().newBuilder()
-            .addHeader("Authorization", "Bearer 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")
+            .addHeader("Authorization", "Bearer $token")
             .build()
         chain.proceed(newRequest)
     }

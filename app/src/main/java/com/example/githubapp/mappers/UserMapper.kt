@@ -4,7 +4,7 @@ import com.example.core.domain.User
 import com.example.githubapp.framework.network.response.UserResponse
 
 object UserMapper {
-    fun map(userResponse: UserResponse): User {
+    fun toUserModel(userResponse: UserResponse): User {
         return User(
             login = userResponse.login,
             id = userResponse.id,
@@ -27,7 +27,7 @@ object UserMapper {
         )
     }
 
-    fun toListUser(responseList: List<UserResponse>): List<User> {
-        return responseList.map { map(it) }
+    fun toListUserModel(responseList: List<UserResponse>): List<User> {
+        return responseList.map { toUserModel(it) }
     }
 }

@@ -7,9 +7,13 @@ import javax.inject.Inject
 
 class UserDataSource @Inject constructor(
     private val githubApi: GithubApi
-): UserRemoteDataSource<List<UserResponse>> {
+): UserRemoteDataSource<List<UserResponse>, UserResponse>{
 
-    override suspend fun getUsers(query: String): List<UserResponse> {
-        return githubApi.getUsers(query)
+    override suspend fun getUser(username: String): UserResponse {
+        return githubApi.getUser(username)
+    }
+
+    override suspend fun getAllUsers(): List<UserResponse> {
+        return githubApi.getAllUsers()
     }
 }

@@ -20,7 +20,7 @@ interface RepositoryModule {
     companion object {
 
         @Provides
-        fun provideRemoteDataSource(dataSource: UserDataSource): UserRemoteDataSource<List<UserResponse>> {
+        fun provideRemoteDataSource(dataSource: UserDataSource): UserRemoteDataSource<List<UserResponse>, UserResponse> {
             return dataSource
         }
     }

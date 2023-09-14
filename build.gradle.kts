@@ -5,5 +5,8 @@ plugins {
     id("com.google.dagger.hilt.android") version "2.48" apply false
     id("org.jetbrains.kotlin.kapt") version "1.9.10"
     id("org.jetbrains.kotlin.jvm") version "1.9.10" apply false
+    id("androidx.navigation.safeargs") version "2.5.0" apply false
 }
+
+
 

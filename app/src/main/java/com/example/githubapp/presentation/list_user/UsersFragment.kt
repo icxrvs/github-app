@@ -33,7 +33,18 @@ class UsersFragment : Fragment() {
     ): View {
         viewBinding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        adapter = UserListAdapter()
+        adapter = UserListAdapter{
+            val userName = it.login
+            val action = userName?.let { login ->
+                UsersFragmentDirections.actionNavigationHomeToUserDetailFragment(
+                    login
+                )
+            }
+
+            if (action != null) {
+                findNavController(this).navigate(action)
+            }
+        }
 
         viewModel.getAllUsers()
 
@@ -83,20 +94,20 @@ class UsersFragment : Fragment() {
     private fun buildAlertDialog(){
         val builder = context?.let { AlertDialog.Builder(it) }
 
-        builder?.setTitle("Buscar usuário")
+        builder?.setTitle(getString(R.string.search_user))
 
         val customView = LayoutInflater.from(context).inflate(R.layout.dialog_input, null)
         val editText = customView.findViewById<EditText>(R.id.editText)
 
         builder?.setView(customView)
 
-        builder?.setPositiveButton("OK") { dialog, which ->
+        builder?.setPositiveButton(getString(R.string.text_confirm)) { dialog, which ->
             val userName = editText.text.toString()
             val action = UsersFragmentDirections.actionNavigationHomeToUserDetailFragment(userName)
             findNavController(this).navigate(action)
         }
 
-        builder?.setNegativeButton("CANCELAR") { dialog, which ->
+        builder?.setNegativeButton(getString(R.string.text_cancel)) { dialog, which ->
             dialog.dismiss()
         }
 

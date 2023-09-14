@@ -4,4 +4,11 @@
     <string name="enter_username">Enter username</string>
     <string name="user_not_found">User not found</string>
     <string name="avatar_image">Avatar image from github</string>
+    <string name="text_confirm">OK</string>
+    <string name="text_cancel">CANCEL</string>
+    <string name="search_user">Search user</string>
+    <string name="followers">%1$s Followers</string>
+    <string name="following">%1$s Following </string>
+    <string name="user_doesnt_have_repositories">This user does not have any repositories yet.</string>
+    <string name="empty_description">No description</string>
 </resources>

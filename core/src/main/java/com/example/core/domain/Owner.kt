@@ -1,18 +1,15 @@
 package com.example.core.domain
-data class User (
+
+data class Owner(
     var login: String? = null,
-    var name: String? = null,
-    var bio: String? = null,
     var id: Int? = null,
-    var followers: Int? = null,
-    var following: Int? = null,
     var nodeId: String? = null,
     var avatarUrl: String? = null,
     var gravatarId: String? = null,
     var url: String? = null,
     var htmlUrl: String? = null,
     var followersUrl: String? = null,
-    var followingUrl: String? = null ,
+    var followingUrl: String? = null,
     var gistsUrl: String? = null,
     var starredUrl: String? = null,
     var subscriptionsUrl: String? = null,

@@ -3,6 +3,7 @@ package com.example.githubapp.framework.di
 import com.example.core.data.repository.UserRemoteDataSource
 import com.example.core.data.repository.UserRepository
 import com.example.githubapp.framework.UserRepositoryImpl
+import com.example.githubapp.framework.network.response.UserRepositoriesResponse
 import com.example.githubapp.framework.network.response.UserResponse
 import com.example.githubapp.framework.remote.UserDataSource
 import dagger.Binds
@@ -20,7 +21,7 @@ interface RepositoryModule {
     companion object {
 
         @Provides
-        fun provideRemoteDataSource(dataSource: UserDataSource): UserRemoteDataSource<List<UserResponse>, UserResponse> {
+        fun provideRemoteDataSource(dataSource: UserDataSource): UserRemoteDataSource<List<UserResponse>, UserResponse, List<UserRepositoriesResponse>> {
             return dataSource
         }
     }

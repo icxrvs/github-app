@@ -5,6 +5,7 @@ import com.example.core.data.repository.UserRepository
 import com.example.core.domain.User
 import com.example.githubapp.framework.network.response.UserResponse
 import com.example.githubapp.mappers.UserMapper.toListUserModel
+import com.example.githubapp.mappers.UserMapper.toUserModel
 import javax.inject.Inject
 
 class UserRepositoryImpl @Inject constructor(
@@ -15,6 +16,6 @@ class UserRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getUserDetails(username: String): User {
-        TODO("Not yet implemented")
+        return toUserModel(remoteDataSource.getUser(username))
     }
 }

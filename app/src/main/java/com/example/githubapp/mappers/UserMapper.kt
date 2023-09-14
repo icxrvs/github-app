@@ -7,6 +7,8 @@ object UserMapper {
     fun toUserModel(userResponse: UserResponse): User {
         return User(
             login = userResponse.login,
+            name = userResponse.name,
+            bio = userResponse.bio,
             id = userResponse.id,
             nodeId = userResponse.nodeId,
             avatarUrl = userResponse.avatarUrl,

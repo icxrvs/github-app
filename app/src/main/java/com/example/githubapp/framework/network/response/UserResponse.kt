@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName
 
 data class UserResponse(
     @SerializedName("login") var login: String? = null,
+    @SerializedName("name") var name: String? = null,
+    @SerializedName("bio") var bio: String? = null,
     @SerializedName("id") var id: Int? = null,
     @SerializedName("node_id") var nodeId: String? = null,
     @SerializedName("avatar_url") var avatarUrl: String? = null,

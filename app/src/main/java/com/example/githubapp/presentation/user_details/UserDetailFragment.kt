@@ -7,8 +7,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
+import com.example.core.domain.User
 import com.example.core.util.Status
-import com.example.githubapp.databinding.FragmentHomeBinding
+import com.example.githubapp.R
 import com.example.githubapp.databinding.FragmentUserDetailBinding
 import com.example.githubapp.presentation.list_user.adapters.UserListAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -29,8 +34,10 @@ class UserDetailFragment : Fragment() {
 
         adapter = UserListAdapter()
 
-        viewModel.getUserDetail("icarusdevv")
+        val args: UserDetailFragmentArgs by navArgs()
+        val username = args.username
 
+        viewModel.getUserDetail(username)
         return viewBinding.root
     }
 
@@ -44,16 +51,27 @@ class UserDetailFragment : Fragment() {
                     }
                     is Status.Success<*> -> {
                         progressBar.visibility = View.GONE
-                        Toast.makeText(context, "Deu certo!", Toast.LENGTH_SHORT).show()
-
+                        mountCard(status.data as User)
                     }
                     is Status.Error -> {
                         progressBar.visibility = View.GONE
-                        val errorMessage = status.throwable.message
-                        println(errorMessage)
+                        Toast.makeText(context,getString(R.string.user_not_found), Toast.LENGTH_SHORT).show()
+                        findNavController().navigateUp()
+
                     }
                 }
             }
+        }
+    }
+
+    private fun mountCard(user: User?) {
+        viewBinding.apply {
+            cardView.visibility = View.VISIBLE
+            context?.let {
+                Glide.with(it).load(user?.avatarUrl).centerCrop().transform(CircleCrop()).into(userImage)
+            }
+            userName.text = user?.name
+            userBio.text = user?.bio
         }
     }
 }

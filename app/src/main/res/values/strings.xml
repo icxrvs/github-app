@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">githubapp</string>
+    <string name="app_name">Github app</string>
     <string name="title_home">Home</string>
-    <string name="enter_username">Insira o nome do usuário</string>
+    <string name="enter_username">Enter username</string>
+    <string name="user_not_found">User not found</string>
+    <string name="avatar_image">Avatar image from github</string>
 </resources>

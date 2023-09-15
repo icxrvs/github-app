@@ -26,8 +26,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        //testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        testInstrumentationRunner = "com.example.githubapp.presentation.CustomTestRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         //testInstrumentationRunner = "com.google.dagger.hilt.android.testing.HiltTestRunner"
 
     }
@@ -94,10 +93,8 @@ dependencies {
     kaptTest("com.google.dagger:hilt-compiler:2.48")
 
     debugImplementation("androidx.fragment:fragment-testing:1.6.1")
+
     testImplementation("com.google.dagger:hilt-android-testing:2.48")
     testImplementation("org.robolectric:robolectric:4.10.3")
     androidTestAnnotationProcessor("com.google.dagger:hilt-android-compiler:2.48")
-
-
-
 }

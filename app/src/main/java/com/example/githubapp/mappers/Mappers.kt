@@ -9,7 +9,7 @@ import com.example.githubapp.framework.network.response.OwnerResponse
 import com.example.githubapp.framework.network.response.UserRepositoriesResponse
 import com.example.githubapp.framework.network.response.UserResponse
 
-object UserMapper {
+object Mappers {
     fun toUserModel(userResponse: UserResponse): User {
         return User(
             login = userResponse.login,

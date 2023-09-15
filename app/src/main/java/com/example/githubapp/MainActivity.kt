@@ -1,14 +1,9 @@
 package com.example.githubapp
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.githubapp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,8 +19,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val navHostContainer = supportFragmentManager.findFragmentById(R.id.nav_host_container) as NavHostFragment
-
         navController = navHostContainer.navController
-
     }
 }

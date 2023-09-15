@@ -6,9 +6,9 @@ import com.example.core.domain.User
 import com.example.core.domain.UserRepositories
 import com.example.githubapp.framework.network.response.UserRepositoriesResponse
 import com.example.githubapp.framework.network.response.UserResponse
-import com.example.githubapp.mappers.UserMapper.toListUserModel
-import com.example.githubapp.mappers.UserMapper.toListUserRepositories
-import com.example.githubapp.mappers.UserMapper.toUserModel
+import com.example.githubapp.mappers.Mappers.toListUserModel
+import com.example.githubapp.mappers.Mappers.toListUserRepositories
+import com.example.githubapp.mappers.Mappers.toUserModel
 import javax.inject.Inject
 
 class UserRepositoryImpl @Inject constructor(

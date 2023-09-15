@@ -25,7 +25,7 @@ class UserDetailsViewModel @Inject constructor(
     private val _userRepositories = MutableLiveData<Status<List<UserRepositories>>>()
     val userRepositories: LiveData<Status<List<UserRepositories>>> get() = _userRepositories
 
-    fun getUserDetail(username: String) {
+    fun getUserDetails(username: String) {
         viewModelScope.launch {
             getUserDetailUseCase(username).collect { status ->
                 _user.value = status

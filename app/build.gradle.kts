@@ -26,7 +26,10 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        //testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.example.githubapp.presentation.CustomTestRunner"
+        //testInstrumentationRunner = "com.google.dagger.hilt.android.testing.HiltTestRunner"
+
     }
 
     buildTypes {
@@ -68,6 +71,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.2")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.2")
+    implementation("com.google.ar:core:1.39.0")
+    implementation("androidx.test.espresso:espresso-contrib:3.5.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -79,6 +84,20 @@ dependencies {
     //Hilt
     implementation("com.google.dagger:hilt-android:2.48")
     kapt("com.google.dagger:hilt-compiler:2.48")
+
+    testImplementation("org.mockito:mockito-core:3.3.3")
+    testImplementation("org.mockito:mockito-inline:3.3.3")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+    testImplementation("io.mockk:mockk:1.13.7")
+
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.48")
+    kaptTest("com.google.dagger:hilt-compiler:2.48")
+
+    debugImplementation("androidx.fragment:fragment-testing:1.6.1")
+    testImplementation("com.google.dagger:hilt-android-testing:2.48")
+    testImplementation("org.robolectric:robolectric:4.10.3")
+    androidTestAnnotationProcessor("com.google.dagger:hilt-android-compiler:2.48")
+
 
 
 }

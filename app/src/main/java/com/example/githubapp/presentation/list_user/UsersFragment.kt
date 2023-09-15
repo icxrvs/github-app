@@ -40,14 +40,12 @@ class UsersFragment : Fragment() {
                     login
                 )
             }
-
             if (action != null) {
                 findNavController(this).navigate(action)
             }
         }
 
         viewModel.getAllUsers()
-
         return viewBinding.root
     }
 

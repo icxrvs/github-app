@@ -19,7 +19,6 @@ import com.example.core.domain.UserRepositories
 import com.example.core.util.Status
 import com.example.githubapp.R
 import com.example.githubapp.databinding.FragmentUserDetailBinding
-import com.example.githubapp.presentation.list_user.adapters.UserListAdapter
 import com.example.githubapp.presentation.user_details.adapters.UserRepositoryListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -40,10 +39,9 @@ class UserDetailsFragment : Fragment() {
         adapter = UserRepositoryListAdapter()
 
         val args: UserDetailsFragmentArgs by navArgs()
-
         val username = args.username
 
-        viewModel.getUserDetail(username)
+        viewModel.getUserDetails(username)
         viewModel.getAllUserRepositories(username)
 
         return viewBinding.root
